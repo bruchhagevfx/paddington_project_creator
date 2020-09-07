@@ -1,15 +1,17 @@
 import os, sys
+import webbrowser
+
 
 
 print ("-----------------------------------")
 print ("Paddington Project Creator V001")
 print ("-----------------------------------")
 
-proj_location = "/Volumes/zeugs/00_pipeline/testproj"
+proj_location = input("enter a location for your project:")
 proj_name = input("enter Project Name:")
 number_shots = 101 + int(input("enter number of Shots:"))
 name_shots = input("Name Shots?..(y/n):")
-user_tasks = input("put task: ")
+user_tasks = input("add tasks septerate by , : ")
 task_list = user_tasks.split(",")
 print (task_list)
 
@@ -49,7 +51,7 @@ def create_shots():
             print ("Shot " + str(shots))
             pick_name = input("pick a name: ")
             print ()
-            os.makedirs(pick_name + "_" + str(shots))
+            os.makedirs(str(shots) + "_" + pick_name)
 
 
 
@@ -64,6 +66,11 @@ def summary():
     print ("-----------------------------------")
 
 
+def opendir():
+    webbrowser.open('file:///' + proj_location)
+
+
+
 
 
 ##--------------##
@@ -73,3 +80,4 @@ change_dir()
 create_project()
 create_shots()
 summary()
+opendir()
