@@ -15,7 +15,6 @@ print (task_list)
 
 ##----------##
 
-
     
 def change_dir():
     os.chdir(proj_location)
@@ -43,16 +42,14 @@ def create_shots():
 
     if name_shots == "n":
         for shots in range(101,number_shots):
-            #os.makedirs(str(shots))
-            shot = str(shots)
-            task = str(task_list)
-            print(task)
+            os.makedirs(str(shots))
+            
     else:
         for shots in range(101,number_shots):
             print ("Shot " + str(shots))
             pick_name = input("pick a name: ")
             print ()
-            os.makedirs(str(shots)+"_"+pick_name)
+            os.makedirs(pick_name + "_" + str(shots))
 
 
 
