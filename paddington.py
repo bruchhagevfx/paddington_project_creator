@@ -13,7 +13,7 @@ number_shots = 101 + int(input("enter number of Shots:"))
 name_shots = input("Name Shots?..(y/n):")
 #user_tasks = input("add tasks septerate by , : ")
 #task_list = user_tasks.split(",")
-folders = ['01_moddeling','02_animation','03_fx']
+folders = ["__publish","01_layout","02_animation","03_effects","04_lighting","05_comp"]
 
 shotdir = os.path.join(proj_location, proj_name, "02_shots")
 shotlist = []
