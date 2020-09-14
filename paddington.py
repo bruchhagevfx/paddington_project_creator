@@ -14,7 +14,7 @@ number_shots = 101 + int(input("enter number of Shots:"))
 name_shots = input("Name Shots?..(y/n):")
 
 ##---------folder---------##
-base_folder= ["00_pipeline", "01_assets", "02_shots"]
+base_folder= ["00_pipeline", "01_assets", "02_shots", "05_Dailies"]
 task_folders = ["__publish","01_layout","02_animation","03_effects","04_lighting","05_comp"]
 
 
