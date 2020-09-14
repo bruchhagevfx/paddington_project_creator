@@ -50,7 +50,7 @@ def create_shots():
 
     if name_shots == "n":
         for shots in range(101,number_shots):
-            os.makedirs(str(shots))
+            os.makedirs("sh" + str(shots))
 
          
     else:
