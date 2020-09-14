@@ -58,7 +58,7 @@ def create_shots():
             print ("Shot " + str(shots))
             pick_name = input("pick a name: ")
             print ()
-            os.makedirs(str(shots) + "_" + pick_name)
+            os.makedirs("sh" + str(shots) + "_" + pick_name)
 
 
 def get_shotlist():
