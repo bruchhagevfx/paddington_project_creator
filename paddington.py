@@ -14,6 +14,7 @@ name_shots = input("Name Shots?..(y/n):")
 #user_tasks = input("add tasks septerate by , : ")
 #task_list = user_tasks.split(",")
 folders = ["__publish","01_layout","02_animation","03_effects","04_lighting","05_comp"]
+base_folder= ["00_pipeline", "01_assets", "02_shots"]
 
 shotdir = os.path.join(proj_location, proj_name, "02_shots")
 shotlist = []
@@ -39,10 +40,13 @@ def create_project():
         print("-----------------------------------")
 
 
+def create_base():
+    os.chdir(proj_name)
+    for folder in base_folder:
+            os.mkdir(folder)
+
 
 def create_shots():
-    os.chdir(proj_name)
-    os.makedirs("02_shots")
     os.chdir("02_shots")
     print ("create Shots in:", os.getcwd())
     print("-----------------------------------")
@@ -96,6 +100,7 @@ def opendir():
 #run those guys
 change_dir()
 create_project()
+create_base()
 create_shots()
 get_shotlist()
 create_task()
