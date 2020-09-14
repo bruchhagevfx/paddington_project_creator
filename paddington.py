@@ -7,14 +7,16 @@ print ("-----------------------------------")
 print ("Paddington Project Creator V001")
 print ("-----------------------------------")
 
+##---------userinputs---------##
 proj_location = input("enter a location for your project:") 
 proj_name = input("enter Project Name:")
 number_shots = 101 + int(input("enter number of Shots:"))
 name_shots = input("Name Shots?..(y/n):")
-#user_tasks = input("add tasks septerate by , : ")
-#task_list = user_tasks.split(",")
-folders = ["__publish","01_layout","02_animation","03_effects","04_lighting","05_comp"]
+
+##---------folder---------##
 base_folder= ["00_pipeline", "01_assets", "02_shots"]
+task_folders = ["__publish","01_layout","02_animation","03_effects","04_lighting","05_comp"]
+
 
 shotdir = os.path.join(proj_location, proj_name, "02_shots")
 shotlist = []
@@ -54,7 +56,7 @@ def create_shots():
 
     if name_shots == "n":
         for shots in range(101,number_shots):
-            os.makedirs("sh" + str(shots))
+            os.makedirs("sh_" + str(shots))
 
          
     else:
@@ -62,7 +64,7 @@ def create_shots():
             print ("Shot " + str(shots))
             pick_name = input("pick a name: ")
             print ()
-            os.makedirs("sh" + str(shots) + "_" + pick_name)
+            os.makedirs("sh_" + str(shots) + "_" + pick_name)
 
 
 def get_shotlist():
@@ -73,7 +75,7 @@ def get_shotlist():
 
 def create_task():
     for rootdir in shotlist:
-        for folder in folders:
+        for folder in task_folders:
             os.mkdir(os.path.join(rootdir,folder))
 
 
