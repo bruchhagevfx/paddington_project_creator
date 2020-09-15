@@ -12,17 +12,11 @@ proj_location = input("enter a location for your project:")
 proj_name = input("enter Project Name:")
 number_shots = 101 + int(input("enter number of Shots:"))
 name_shots = input("Name Shots?..(y/n):")
-<<<<<<< HEAD
-#user_tasks = input("add tasks septerate by , : ")
-#task_list = user_tasks.split(",")
-shotfolder = ["__publish","01_layout","02_animation","03_effects","04_lighting","05_comp"]
-=======
 
 ##---------folder---------##
 base_folder= ["00_pipeline", "01_assets", "02_shots", "05_Dailies"]
 task_folders = ["__publish","01_layout","02_animation","03_effects","04_lighting","05_comp"]
 
->>>>>>> c166cef2e5383001fcb93b3bf8c580b908aea54e
 
 shotdir = os.path.join(proj_location, proj_name, "02_shots")
 shotlist = []
@@ -81,11 +75,7 @@ def get_shotlist():
 
 def create_task():
     for rootdir in shotlist:
-<<<<<<< HEAD
-        for folder in shotfolder:
-=======
         for folder in task_folders:
->>>>>>> c166cef2e5383001fcb93b3bf8c580b908aea54e
             os.mkdir(os.path.join(rootdir,folder))
 
 
