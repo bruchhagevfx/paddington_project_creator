@@ -16,10 +16,11 @@ name_shots = input("Name Shots?..(y/n):")
 ##---------folder---------##
 base_folder= ["00_pipeline","01_management","02_shots","03_assets","05_Dailies"]
 task_folders = ["__publish","00_footage","01_layout","02_animation","03_effects","04_lighting","05_comp"]
+management_folders= ["__in","__out","documents"]
 
 
 shotdir = os.path.join(proj_location, proj_name, "02_shots")
-shotlist = []
+shotlist = [] 
 
 
 
@@ -79,6 +80,12 @@ def create_task():
             os.mkdir(os.path.join(rootdir,folder))
 
 
+def management_folder():
+    os.chdir(os.path.join(proj_location,proj_name,"01_management"))
+    for folder in management_folders:
+            os.mkdir(folder)
+
+
 def summary():
     print ("-----------------------------------")
     print ("Project.. " + proj_name + " ..created")
@@ -106,5 +113,7 @@ create_base()
 create_shots()
 get_shotlist()
 create_task()
+management_folder()
+
 summary()
 opendir()
